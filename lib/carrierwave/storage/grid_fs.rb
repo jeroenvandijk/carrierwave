@@ -49,10 +49,10 @@ module CarrierWave
       protected
 
         def database
-          @connection ||= begin
+          @connection ||= @uploader.grid_fs_database || begin
             host = @uploader.grid_fs_host
             port = @uploader.grid_fs_port
-            database = @uploader.grid_fs_database
+            database = @uploader.grid_fs_database_name
             username = @uploader.grid_fs_username
             password = @uploader.grid_fs_password
             db = Mongo::Connection.new(host, port).db(database)
