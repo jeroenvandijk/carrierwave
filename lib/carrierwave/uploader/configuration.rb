@@ -20,6 +20,7 @@ module CarrierWave
         add_config :cloud_files_api_key
         add_config :cloud_files_container
         add_config :grid_fs_database
+        add_config :grid_fs_database_name
         add_config :grid_fs_host
         add_config :grid_fs_port
         add_config :grid_fs_username
@@ -50,7 +51,7 @@ module CarrierWave
           #config.s3_access_policy = 'public-read' # Now set in library
           config.s3_headers = {}
           config.s3_multi_thread = true
-          config.grid_fs_database = 'carrierwave'
+          config.grid_fs_database_name = 'carrierwave'
           config.grid_fs_host = 'localhost'
           config.grid_fs_port = 27017
           config.store_dir = 'uploads'

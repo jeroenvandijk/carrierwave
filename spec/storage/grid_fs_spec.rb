@@ -8,7 +8,7 @@ describe CarrierWave::Storage::GridFS do
   before do
     @database = Mongo::Connection.new('localhost', 27017).db('carrierwave_test')
     @uploader = mock('an uploader')
-    @uploader.stub!(:grid_fs_database).and_return("carrierwave_test")
+    @uploader.stub!(:grid_fs_database_name).and_return("carrierwave_test")
     @uploader.stub!(:grid_fs_host).and_return("localhost")
     @uploader.stub!(:grid_fs_port).and_return(27017)
     @uploader.stub!(:grid_fs_access_url).and_return(nil)
